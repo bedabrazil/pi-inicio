@@ -8,8 +8,7 @@
         <link rel="stylesheet" href="style/css/bootstrap.css">
         <link rel="stylesheet" href="style/css/master.css">
         <link rel="author" href="humans.txt">
-		<link rel="icon" type="image/png" href="style/img/ico.png">
-
+		<link rel="icon" type="image/png" href="style/img/ico.png">        
     </head>
     <body>
 
@@ -28,7 +27,7 @@
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav">
+			<ul class="nav navbar-nav">
 		        <li class="active"><a href="#">Configuração <span class="sr-only">(current)</span></a></li>
 		        <li class="dropdown">
 		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatórios <span class="caret"></span></a>
@@ -42,10 +41,10 @@
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produto <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li><a href="/PI">Listagem</a></li>
+		            <li><a href="javascript:void(0)">Listagem</a></li>
 		            <li><a href="/PI/new.html">Novo</a></li>
 		            <li role="separator" class="divider"></li>
-		            <li><a href="/PI/registrar_lotes.html">Registrar Lotes</a></li>
+		            <li><a href="javascript:void(0)" class="disabled">Registrar Lotes</a></li>
 		            <li role="separator" class="divider"></li>
 		          </ul>
 		        </li>
@@ -65,8 +64,8 @@
 		        <button type="submit" class="btn btn-default">Buscar</button>
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#">Link</a></li>
-		        <li class="dropdown">
+		        <li><a href="/PI/login.html">Login</a></li>
+		        <!-- <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
 		            <li><a href="#">Another action</a></li>
@@ -74,7 +73,7 @@
 		            <li role="separator" class="divider"></li>
 		            <li><a href="#">Separated link</a></li>
 		          </ul>
-		        </li>
+		        </li> -->
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -83,27 +82,38 @@
 		<div class="container">
 			<div class="row">
 				<div class="panel panel-default">
-				  <div class="panel-heading">Produto tal</div>
+				  <div class="panel-heading">Lote tal</div>
 				  <div class="panel-body">
 						<div class="col-lg-12 well">
-							<div class="col-lg-2">
-								<label>Campo1</label>
-							</div>
-							<div class="col-lg-2">
-								<label>Campo2</label>
-							</div>
-							<div class="col-lg-2">
-								<label>Campo3</label>
-							</div>
-							<div class="col-lg-2">
-								<label>Campo4</label>
-							</div>
-							<div class="col-lg-2">
-								<label>Campo5</label>
-							</div>
-							<div class="col-lg-2">
-								<label>Campo6</label>
-							</div>
+						<form action="/PI" method="GET">
+								<fieldset>
+									<div class="col-lg-12 form-space">
+										<label>Nome do Lote</label>
+										<input type="text" name="name" placeholder="Nome do Lote" class="form-control">
+									</div>
+									<div class="col-lg-12 form-space">
+										<label>Descriçãodo do Lote</label>
+										<textarea placeholder="Descrição do Lote" name="description" id="description" cols="40" rows="3" class="form-control"></textarea>
+									</div>
+									<div class="col-lg-3 form-space">
+										<label>Tipo de Produto</label>
+										<select name="product_type" class="form-control" id="product_type">
+											<option value="">Selecione um Tipo de Produto</option>
+											<option value="1">Produto 1</option>
+											<option value="2">Produto 2</option>
+											<option value="3">Produto 3</option>
+										</select>
+									</div>
+									<div class="col-lg-3 form-space">
+										<label>Quantidade de Produto no Lote</label>
+										<input type="number" name='amount-product' placeholder="Quantidade de Produto no Lote" class="form-control">
+									</div>
+									
+									<div class="col-lg-12 form-space">
+										<input type="submit" value="Enviar" class="btn btn-button">
+									</div>
+								</fieldset>
+							</form>
 						</div>
 					</div><!-- end panel-body-->
 				</div><!-- end panel -->
